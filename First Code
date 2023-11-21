@@ -1,0 +1,63 @@
+Table Paciente {
+  CPF int(11) [primary key]
+  Nome char(50) not null
+  Celular int(11) not null
+  Cidade char(50) not null
+}
+
+Table Usuario {
+  Cod_Usuario int [primary key]
+  tipo char(50) not null
+  Nome char(50) not null
+  Telefone int(11) not null
+}
+
+Table Fisioterapeuta {
+  Cod_Fisio int [primary key]
+  Nome char(50) not null
+  Celular int(11) not null
+  Cidade char(50) not null
+  Atendimento_ini time not null
+  Atendimento_fin time not null
+}
+
+Table Sala {
+  Cod_Sala int [primary key]
+  Local char(50) not null
+  disposicao char(1) not null
+}
+
+Table Agenda {
+  Cod_agenda int [primary key]
+  Cod_Fisio int 
+  CPF int(11) 
+  Cod_Usuario int
+  Cod_Sala int 
+  Cod_Servico int
+  Horario datetime not null
+  Cancelamento char(1) not null
+}
+
+Table Servico {
+  Cod_Servico int [primary key]
+  Tipo_Servico char(50) not null
+  Valor float(6.2) not null
+  Cod_Fisio int 
+}
+
+Table Pagamento {
+  Cod_Pagamento int [primary key]
+  Tipo_Pagamento char(1) not null
+  Multa float(6.2) not null
+}
+
+Table Log{
+  - Máscaras 
+  - Foreing Keys
+}
+
+Ref: Cliente.user_id > Cliente.id
+
+Ref: Cliente.id < follows.following_user_id
+
+Ref: Cliente.id < follows.followed_user_id
