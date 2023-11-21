@@ -11,8 +11,8 @@ Projeto Final de Banco de Dados II, do Centro Universitário SATC, voltado para 
 [Maria Luíza Arend da Silva](https://github.com/) <br>
 
 ### Modelo Físico:
-Utilizado https://xxxxxxxxx/<br>
-Arquivo fonte: <code>link pro arquivo</code><br>
+Utilizado https://dbdiagram.io/ <br>
+Arquivo fonte: <code>link pro arquivo</code> <br>
 <code>Imagem</code>
   
 ### Dicionário de Dados:
