@@ -1,6 +1,6 @@
-## FisioRangers
-Projeto Final de Banco de Dados II, do Centro Universitário SATC, voltado para o atendimento de clinicas fisioterapêuticas
-### Grupo c
+## FisioRangers - Grupo C
+Projeto Final de Banco de Dados II, do Centro Universitário SATC, voltado para o atendimento de clinicas fisioterapêuticas.
+
 
 ### Integrantes:
 [Gabriel Tarciso Macieiski](https://github.com/) <br> 
@@ -13,8 +13,8 @@ Projeto Final de Banco de Dados II, do Centro Universitário SATC, voltado para 
 ### Modelo Físico:
 Utilizado https://dbdiagram.io/ <br>
 Arquivo fonte: <code>link pro arquivo</code> <br>
-<code>Imagem</code>
-  
+<img src="ModeloFisico.png" alt="Modelo Físico" width="900" height="600">
+ 
 ### Dicionário de Dados:
 <code>Excel ou tabela do Github (markdown)</code>
 
