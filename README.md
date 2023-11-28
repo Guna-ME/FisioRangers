@@ -13,7 +13,7 @@ Projeto Final de Banco de Dados II, do Centro Universitário SATC, voltado para 
 ### Modelo Físico:
 Utilizado https://dbdiagram.io/ <br>
 Arquivo fonte: <code>link pro arquivo</code> <br>
-<code>Imagem</code>
+<img src="Untitled.png" alt="Modelo Físico" width="900" height="550">
   
 ### Dicionário de Dados:
 <code>Excel ou tabela do Github (markdown)</code>
