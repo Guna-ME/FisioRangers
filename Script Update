@@ -1,65 +1,72 @@
-Table Pessoa {
-  Cod_Pessoa int [primary key]
-  Nome char(50) 
-  Celular int(11) 
-  Cidade char(50) 
-}
+CREATE TABLE `Pessoa` (
+  `Cod_Pessoa` int PRIMARY KEY,
+  `Nome` char(50),
+  `Celular` int(11),
+  `Cidade` char(50)
+);
 
-Table Usuario {
-  Cod_Usuario int [primary key]
-  Tipo char(50) 
-  Nome char(50) 
-  Telefone int(11) 
-}
+CREATE TABLE `Usuario` (
+  `Cod_Usuario` int PRIMARY KEY,
+  `Tipo` char(50),
+  `Nome` char(50),
+  `Telefone` int(11)
+);
 
-Table Sala {
-  Cod_Sala int [primary key]
-  Local char(50) 
-  Disposicao char(1) 
-}
+CREATE TABLE `Sala` (
+  `Cod_Sala` int PRIMARY KEY,
+  `Local` char(50),
+  `Disposicao` char(1)
+);
 
-Table Agenda {
-  Cod_agenda int [primary key]
-  Cod_Fisio int 
-  Cod_Paciente int
-  Cod_Usuario int
-  Cod_Sala int 
-  Cod_Servico int
-  Horario datetime 
-  Cancelamento char(1) 
-}
+CREATE TABLE `Agenda` (
+  `Cod_agenda` int PRIMARY KEY,
+  `Cod_Fisio` int,
+  `Cod_Paciente` int,
+  `Cod_Usuario` int,
+  `Cod_Sala` int,
+  `Cod_Servico` int,
+  `Horario` datetime,
+  `Cancelamento` char(1)
+);
 
-Table Servico {
-  Cod_Servico int [primary key]
-  Tipo_Servico char(50) 
-  Valor float(6.2) 
-  Cod_Pagamento int
-  Cod_Fisio int 
-}
+CREATE TABLE `Servico` (
+  `Cod_Servico` int PRIMARY KEY,
+  `Tipo_Servico` char(50),
+  `Valor` float(6.2),
+  `Cod_Pagamento` int,
+  `Cod_Fisio` int
+);
 
-Table Pagamento {
-  Cod_Pagamento int [primary key]
-  Cod_Tipo int
-  Multa_Cancelamento float(6.2) 
-}
+CREATE TABLE `Pagamento` (
+  `Cod_Pagamento` int PRIMARY KEY,
+  `Cod_Tipo` int,
+  `Multa_Cancelamento` float(6.2)
+);
 
-Table Tipo_Pagamento {
-  Cod_Tipo int [primary key]
-  Tipo_Pagamento char(10) 
-}
+CREATE TABLE `Tipo_Pagamento` (
+  `Cod_Tipo` int PRIMARY KEY,
+  `Tipo_Pagamento` char(10)
+);
 
-Table log {
-  Data datetime 
-  Nome_Usuario char(50)
-  Tipo_Operacao char(50)
-  Descricao char(100)
-}
+CREATE TABLE `log` (
+  `Data` datetime,
+  `Nome_Usuario` char(50),
+  `Tipo_Operacao` char(50),
+  `Descricao` char(100)
+);
 
-ref: Pessoa.Cod_Pessoa < Agenda.Cod_Paciente
-ref: Pagamento.Cod_Pagamento < Servico.Cod_Pagamento
-ref: Usuario.Cod_Usuario < Agenda.Cod_Usuario
-ref: Sala.Cod_Sala - Agenda.Cod_Sala
-ref: Pessoa.Cod_Pessoa < Agenda.Cod_Fisio
-ref: Servico.Cod_Servico > Agenda.Cod_Servico
-ref: Tipo_Pagamento.Cod_Tipo > Pagamento.Cod_Tipo
-ref: Servico.Cod_Fisio > Agenda.Cod_Fisio
+ALTER TABLE `Agenda` ADD FOREIGN KEY (`Cod_Paciente`) REFERENCES `Pessoa` (`Cod_Pessoa`);
+
+ALTER TABLE `Servico` ADD FOREIGN KEY (`Cod_Pagamento`) REFERENCES `Pagamento` (`Cod_Pagamento`);
+
+ALTER TABLE `Agenda` ADD FOREIGN KEY (`Cod_Usuario`) REFERENCES `Usuario` (`Cod_Usuario`);
+
+ALTER TABLE `Agenda` ADD FOREIGN KEY (`Cod_Sala`) REFERENCES `Sala` (`Cod_Sala`);
+
+ALTER TABLE `Agenda` ADD FOREIGN KEY (`Cod_Fisio`) REFERENCES `Pessoa` (`Cod_Pessoa`);
+
+ALTER TABLE `Servico` ADD FOREIGN KEY (`Cod_Servico`) REFERENCES `Agenda` (`Cod_Servico`);
+
+ALTER TABLE `Tipo_Pagamento` ADD FOREIGN KEY (`Cod_Tipo`) REFERENCES `Pagamento` (`Cod_Tipo`);
+
+ALTER TABLE `Servico` ADD FOREIGN KEY (`Cod_Fisio`) REFERENCES `Agenda` (`Cod_Fisio`);
