@@ -81,5 +81,8 @@ GO
 ALTER TABLE [Servico] ADD FOREIGN KEY ([Cod_Servico]) REFERENCES [Agenda] ([Cod_Servico])
 GO
 
+ALTER TABLE [Servico] ADD FOREIGN KEY ([Cod_Fisio]) REFERENCES [Agenda] ([Cod_Fisio])
+GO
+
 ALTER TABLE [Tipo_Pagamento] ADD FOREIGN KEY ([Cod_Tipo]) REFERENCES [Pagamento] ([Cod_Tipo])
 GO
