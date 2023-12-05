@@ -73,7 +73,26 @@ CREATE TABLE [log] (
 );
 
 -- Add Indexes
-CREATE CLUSTERED INDEX [IX_Agenda_Horario] ON [Agenda] ([Horario]);
-CREATE NONCLUSTERED INDEX [IX_Servico_Cod_Fisio] ON [Servico] ([Cod_Fisio]);
-CREATE CLUSTERED INDEX [IX_Pagamento_Cod_Tipo] ON [Pagamento] ([Cod_Tipo]);
-CREATE CLUSTERED INDEX [IX_Tipo_Pagamento_Tipo_Pagamento] ON [Tipo_Pagamento] ([Tipo_Pagamento]);
+
+CREATE CLUSTERED INDEX idx_usuario_cod_primary ON Usuario (Cod_Usuario);
+CREATE CLUSTERED INDEX idx_pessoa_cod_primary ON Pessoa (Cod_Pessoa);
+CREATE CLUSTERED INDEX idx_agenda_cod_primary ON Agenda (Cod_Agenda);
+CREATE CLUSTERED INDEX idx_sala_cod_primary ON Sala (Cod_Sala);
+CREATE CLUSTERED INDEX idx_pagamento_cod_primary ON Pagamento (Cod_Pagamento);
+CREATE CLUSTERED INDEX idx_tipo_cod_primary ON Tipo Pagamento (Cod_Tipo);
+CREATE CLUSTERED INDEX idx_servico_cod_primary ON Servico (Cod_Servico);
+
+CREATE NONCLUSTERED INDEX idx_paciente_cod_foreign ON Agenda (Cod_Paciente);
+CREATE NONCLUSTERED INDEX idx_usuario_cod_foreign ON Agenda (Cod_Usuario);
+CREATE NONCLUSTERED INDEX idx_sala_cod_foreign ON Agenda (Cod_Sala);
+CREATE NONCLUSTERED INDEX idx_fisio_cod_foreign ON Agenda (Cod_Fisio);
+CREATE NONCLUSTERED INDEX idx_servico_cod_foreign ON Agenda (Cod_Serviço);
+
+CREATE NONCLUSTERED INDEX idx_tipo_cod_foreign ON Pagamento (Cod_Tipo);
+CREATE NONCLUSTERED INDEX idx_pagamento_cod_foreign ON Servico (Cod_Pagamento);
+CREATE NONCLUSTERED INDEX idx_fisio_cod_foreign ON Servico (Cod_Fisio);
+
+
+
+
+
