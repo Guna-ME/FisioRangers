@@ -16,8 +16,14 @@ Arquivo fonte: <code>link pro arquivo</code> <br>
 <img src="ModeloFisico.png" alt="Modelo Físico" width="900" height="600">
  
 ### Dicionário de Dados:
-<code>Excel ou tabela do Github (markdown)</code>
-
+![Texto alternativo](t1.png)
+![Texto alternativo](t2.png)
+![Texto alternativo](t3.png)
+![Texto alternativo](t4.png)
+![Texto alternativo](t5.png)
+![Texto alternativo](t6.png)
+![Texto alternativo](t7.png)
+![Texto alternativo](t18.png)
 ### Scripts DDL Criação do Database:
 Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
 <code>1 arquivo SQL por objeto</code>
