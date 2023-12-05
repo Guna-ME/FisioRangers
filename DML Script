@@ -96,13 +96,13 @@ VALUES
   (6, 'Cartão de Débito'),
   (7, 'QR-CODE'),
   (8, 'Link'),
-  (9. 'Aproximação Celular'),
+  (9, 'Aproximação Celular'),
   (10, 'Código de Barras');
 
 -- Inserts para a tabela log
 INSERT INTO log (Data, Nome_Usuario, Tipo_Operacao, Descricao)
 VALUES
-  ('2023-12-14 10:30:00', 'Laura', 'Inserção', 'Novo paciente agendado para amanhã');
+  ('2023-12-14 10:30:00', 'Laura', 'Inserção', 'Novo paciente agendado para amanhã'),
   ('2023-12-05 10:15:00', 'Ana Joaquina', 'Inserção', 'Novo paciente agendado'),
   ('2023-12-06 12:00:00', 'Marcos', 'Atualização', 'Horário da consulta alterado'),
   ('2023-12-07 16:30:00', 'Ulisses', 'Cancelamento', 'Consulta cancelada pelo paciente'),
