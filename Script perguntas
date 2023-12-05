@@ -1,0 +1,37 @@
+1- 
+SELECT COUNT(DISTINCT Cod_Paciente) AS Quantidade_Clientes
+FROM Agenda
+WHERE Cod_Sala = 404
+  AND Cod_Fisio = (SELECT Cod_Pessoa FROM Pessoa WHERE Nome = 'Dr. Marcos')
+  AND CONVERT(date, Horario) = '2023-08-17';
+
+2- 
+SELECT SUM(s.Valor) AS Quantia_Ganha
+FROM Servico s
+JOIN Pagamento p ON s.Cod_Pagamento = p.Cod_Pagamento
+JOIN Pessoa f ON s.Cod_Fisio = f.Cod_Pessoa
+WHERE f.Nome = 'Dra. Joana'
+  AND p.Cod_Tipo = (SELECT Cod_Tipo FROM Tipo_Pagamento WHERE Tipo_Pagamento = 'PIX')
+  AND CONVERT(date, s.Horario) BETWEEN '2023-01-12' AND '2023-04-13';
+
+3- 
+SELECT TOP 1 Tipo_Servico, COUNT(*) AS Quantidade_Realizada
+FROM Agenda a
+JOIN Servico s ON a.Cod_Servico = s.Cod_Servico
+JOIN Sala sa ON a.Cod_Sala = sa.Cod_Sala
+WHERE sa.Cod_Sala = 405 AND YEAR(a.Horario) = 2021
+GROUP BY s.Tipo_Servico
+ORDER BY Quantidade_Realizada DESC;
+
+4- 
+SELECT COUNT(*) AS Quantidade_Massagens
+FROM Agenda a
+JOIN Pessoa pPaciente ON a.Cod_Paciente = pPaciente.Cod_Pessoa
+JOIN Usuario uUsuario ON a.Cod_Usuario = uUsuario.Cod_Usuario
+JOIN Servico s ON a.Cod_Servico = s.Cod_Servico
+JOIN Sala sa ON a.Cod_Sala = sa.Cod_Sala
+WHERE pPaciente.Nome = 'Marcelo'
+  AND uUsuario.Nome = 'Ana'
+  AND sa.Cod_Sala = 404
+  AND s.Tipo_Servico = 'Massagem'
+  AND YEAR(a.Horario) = 2022;
