@@ -12,15 +12,15 @@ Projeto Final de Banco de Dados II, do Centro Universitário SATC, voltado para 
 
 ### Modelo Físico:
 Utilizado https://dbdiagram.io/ <br>
-Arquivo fonte: <code>link pro arquivo</code> <br>
-<img src="ModeloFisico.png" alt="Modelo Físico" width="900" height="600">
+
+[Para visualizar, clique aqui](https://github.com/Guna-ME/FisioRangers/tree/Modelo-F%C3%ADsico)
  
 ### Dicionário de Dados:
-<code>Excel ou tabela do Github (markdown)</code>
+[Para visualizar, clique aqui](https://github.com/Guna-ME/FisioRangers/tree/Dicion%C3%A1rio-de-Dados)
 
 ### Scripts DDL Criação do Database:
 Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
-<code>1 arquivo SQL por objeto</code>
+[Para visualizar, clique aqui](https://github.com/Guna-ME/FisioRangers/tree/Script-DDL)
 
 ### Scripts Popula tabelas:
 Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
